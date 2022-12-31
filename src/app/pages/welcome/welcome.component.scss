@@ -1,0 +1,21 @@
+div {
+   // margin-right: 20px;
+    background-color: grayscale($color: #000000);
+}
+
+hr {
+
+    content:url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/640px-Angular_full_color_logo.svg.png);
+    display:block;
+    position:absolute;
+    left:50%;
+    height:50px;
+    width:50px;
+    margin:-25px 0 0 -25px;
+    border-radius:50px;
+    overflow:hidden;
+    box-shadow: 0 0 0 1px #eef, 0 0 5px;
+  }
+  
+  hr {transform:scale(2)}
+  body {background:#789}

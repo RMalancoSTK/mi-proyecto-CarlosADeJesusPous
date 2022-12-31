@@ -1,0 +1,12 @@
+
+<div class="login-d">
+    <mat-form-field appearence="fill">
+        <mat-label>Usuario</mat-label>
+        <input matInput [(ngModel)]="user.usuario" name="usuario">
+    </mat-form-field>
+    <mat-form-fiel appearence="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [(ngModel)]="user.password" name="pass" type="password">
+    </mat-form-fiel>
+    <button mat-raised-button color="accent" (click)="login()">Entrar</button>
+</div>
