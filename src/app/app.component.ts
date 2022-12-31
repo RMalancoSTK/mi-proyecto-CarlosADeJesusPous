@@ -5,24 +5,22 @@ import { AuthenticationService } from './authentication.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'mi-proyecto-CarlosADeJesusPous';
 
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) {}
 
-constructor(
-  private authService: AuthenticationService,
-  private router: Router 
-) {}
+  isAuthenticated(): boolean {
+    return this.authService.isLoggedIn();
+  }
 
-isAuthenticated(): boolean{
-  return this.authService.isLoggedIn();
-
-}
-
-logout(): void{
-this.authService.logout();
-this.router.navigate(['/login']);
-}
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }

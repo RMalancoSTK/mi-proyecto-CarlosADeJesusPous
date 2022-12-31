@@ -1,21 +1,21 @@
 <div fxLayaout="row" fxLayoutAlign="star center" mat-dialog-title>
-    <h2 class="title m-0" fxFlex="auto">{{unicorn?.name}}</h2>
-    <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+  <h2 class="title m-0" fxFlex="auto">{{unicorn?.name}}</h2>
+  <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
 
     <mat-icon>close</mat-icon>
-</button>
+  </button>
 </div>
 <mat-divider class="mx-6 text-border"></mat-divider>
 <mat-dialog-content class="my-6" fxLayout="column">
-    <mat-card class="example-card">
-        <mat-card-title>{{unicorn?.name}}</mat-card-title>
-        <mat-card-subtitle>{{unicorn?.age}}</mat-card-subtitle>
-        <mat-card-content>
-            <p>{{unicorn?.colour}}</p>
-        </mat-card-content>
-    </mat-card>
+  <mat-card class="example-card">
+    <mat-card-title>{{unicorn?.name}}</mat-card-title>
+    <mat-card-subtitle>{{unicorn?.age}}</mat-card-subtitle>
+    <mat-card-content>
+      <p>{{unicorn?.colour}}</p>
+    </mat-card-content>
+  </mat-card>
 </mat-dialog-content>
 <mat-divider class="mx-6 text-border"></mat-divider>
 <mat-dialog-actions align="end">
-        <button cdkFocusInitial color="warn" mat-button mat-dialog-close type="button">CERRAR</button>
+  <button cdkFocusInitial color="warn" mat-button mat-dialog-close type="button">CERRAR</button>
 </mat-dialog-actions>

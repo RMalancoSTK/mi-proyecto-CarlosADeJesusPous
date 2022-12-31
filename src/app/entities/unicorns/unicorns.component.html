@@ -1,46 +1,42 @@
+<ul><b>
+    <li>Unicornios</li>
+  </b></ul>
+<a class="mUnicorn" (click)="crearUni()">Nuevo unicornio</a>
+<div class="card-body">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="nombre">
+      <td *matHeaderCellDef> Nombre </td>
+      <td *matCellDef="let element"> {{element.name}} </td>
+
+    </ng-container>
+    <ng-container matColumnDef="edad">
+      <td *matHeaderCellDef> Edad </td>
+      <td *matCellDef="let element"> {{element.age}} </td>
+
+    </ng-container>
+    <ng-container matColumnDef="color">
+      <td *matHeaderCellDef> Color </td>
+      <td *matCellDef="let element"> {{element.colour}} </td>
+
+    </ng-container>
+    <ng-container matColumnDef="acciones">
+      <td *matHeaderCellDef> Acciones </td>
+      <td *matCellDef="let element">
 
 
-               <ul><b> <li>Unicornios</li></b></ul>
-              <a class="mUnicorn"(click)="crearUni()">Nuevo unicornio</a>
-            <div class="card-body">
-              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-                
-                <ng-container matColumnDef="nombre">
-                  <td *matHeaderCellDef> Nombre </td>
-                  <td  *matCellDef="let element"> {{element.name}} </td>
+        <button color="primary" mat-button type="button " (click)="verUni(element)">
+          <mat-icon>visibility</mat-icon>
+        </button>
 
-                </ng-container>
-                <ng-container matColumnDef="edad">
-                  <td *matHeaderCellDef> Edad </td>
-                  <td  *matCellDef="let element"> {{element.age}} </td>
+        <button color="primary" mat-button type="button " (click)="editUni(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
 
-                </ng-container>
-                <ng-container matColumnDef="color">
-                  <td  *matHeaderCellDef> Color </td>
-                  <td  *matCellDef="let element"> {{element.colour}} </td>
+        <button color="primary" mat-button type="button " (click)="borrarUni(element._id)">
+          <mat-icon>delete</mat-icon>
+        </button>
 
-                </ng-container>
-                <ng-container matColumnDef="acciones">
-                  <td  *matHeaderCellDef> Acciones </td>
-                  <td  *matCellDef="let element">
-
-
-                    <button color="primary" mat-button type="button "
-                      (click)="verUni(element)">
-                      <mat-icon>visibility</mat-icon>
-                    </button>
-
-                    <button color="primary" mat-button type="button "
-                      (click)="editUni(element)">
-                      <mat-icon>edit</mat-icon>
-                    </button>
-
-                    <button color="primary" mat-button type="button "
-                      (click)="borrarUni(element._id)">
-                      <mat-icon>delete</mat-icon>
-                    </button>
-          
-                </ng-container>
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-              
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

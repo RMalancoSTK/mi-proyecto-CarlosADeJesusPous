@@ -8,23 +8,23 @@ import { UnicornsUpdateComponent } from './unicorns-update.component';
 
 import { MatTableDataSource } from '@angular/material/table';
 
-
 @Component({
   selector: 'app-unicorns',
   templateUrl: './unicorns.component.html',
-
 })
 export class UnicornsComponent implements AfterViewInit {
   displayedColumns: string[] = ['nombre', 'color', 'edad', 'acciones'];
   my_data: Datosu[] = [];
   dataSource = new MatTableDataSource<Datosu>(this.my_data);
 
-  constructor( public ref: MatDialog, private unicornsService: UnicornsService) {
-  }
+  constructor(
+    public ref: MatDialog,
+    private unicornsService: UnicornsService
+  ) {}
 
   ngAfterViewInit() {
     this.unicornsService.getUnicorns().subscribe((data) => {
-      this.dataSource.data = data.body;   
+      this.dataSource.data = data.body;
       console.log(data.body);
     });
   }
@@ -50,14 +50,12 @@ export class UnicornsComponent implements AfterViewInit {
   crearUni() {
     const dialogRef = this.ref.open(UnicornsUpdateComponent, {
       data: null,
-      });
-    dialogRef.afterClosed().subscribe((result) => {
-      this.unicornsService.getUnicorns().subscribe((data) => {  
-        //console.log(data);
-
-       }  ); 
     });
-
+    dialogRef.afterClosed().subscribe((result) => {
+      this.unicornsService.getUnicorns().subscribe((data) => {
+        //console.log(data);
+      });
+    });
   }
 
   borrarUni(_id: string) {

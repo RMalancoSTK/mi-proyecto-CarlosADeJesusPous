@@ -7,12 +7,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 //import { InputDataComponentComponent } from './shared/input-data-component/input-data-component.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     //InputDataComponentComponent,
-
   ],
   imports: [
     MatToolbarModule,
@@ -20,9 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-  
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
